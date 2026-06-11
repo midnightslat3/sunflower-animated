@@ -1,0 +1,201 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    background:#87CEEB;
+}
+
+.sky{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(
+        to bottom,
+        #87CEEB 0%,
+        #BFEFFF 60%,
+        #7CB342 60%,
+        #558B2F 100%
+    );
+}
+
+.sun{
+    position:absolute;
+    top:5%;
+    right:10%;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#FFD54F;
+    box-shadow:
+        0 0 30px #FFD54F,
+        0 0 60px #FFD54F,
+        0 0 120px #FFD54F;
+    animation:sunGlow 5s ease-in-out infinite;
+}
+
+@keyframes sunGlow{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.field{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.sunflower{
+    position:absolute;
+    bottom:0;
+    transform-origin:bottom center;
+    animation:sway 4s ease-in-out infinite;
+}
+
+.sunflower1{
+    left:25%;
+}
+
+.sunflower2{
+    left:50%;
+    transform:scale(.9);
+    animation-delay:.5s;
+}
+
+.sunflower3{
+    left:70%;
+    transform:scale(.8);
+    animation-delay:1s;
+}
+
+@keyframes sway{
+    0%,100%{
+        rotate:-3deg;
+    }
+    50%{
+        rotate:3deg;
+    }
+}
+
+.stem{
+    width:18px;
+    height:320px;
+    margin:auto;
+    background:
+    linear-gradient(
+        to top,
+        #1B5E20,
+        #2E7D32,
+        #4CAF50
+    );
+    border-radius:20px;
+}
+
+.leaf{
+    position:absolute;
+    width:90px;
+    height:45px;
+    background:#43A047;
+}
+
+.leaf-left{
+    left:-75px;
+    top:220px;
+    border-radius:0 100% 0 100%;
+    transform:rotate(-35deg);
+}
+
+.leaf-right{
+    right:-75px;
+    top:140px;
+    border-radius:100% 0 100% 0;
+    transform:rotate(35deg);
+}
+
+.head{
+    position:relative;
+    width:180px;
+    height:180px;
+    margin:auto;
+}
+
+.petals{
+    position:absolute;
+    width:100%;
+    height:100%;
+    animation:petalSpin 25s linear infinite;
+}
+
+@keyframes petalSpin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.petals span{
+    position:absolute;
+    left:75px;
+    top:-10px;
+    width:30px;
+    height:90px;
+    border-radius:50%;
+    background:
+    linear-gradient(
+        to top,
+        #FF9800,
+        #FFC107,
+        #FFE45C
+    );
+    transform-origin:15px 100px;
+}
+
+.petals span:nth-child(1){transform:rotate(0deg);}
+.petals span:nth-child(2){transform:rotate(22.5deg);}
+.petals span:nth-child(3){transform:rotate(45deg);}
+.petals span:nth-child(4){transform:rotate(67.5deg);}
+.petals span:nth-child(5){transform:rotate(90deg);}
+.petals span:nth-child(6){transform:rotate(112.5deg);}
+.petals span:nth-child(7){transform:rotate(135deg);}
+.petals span:nth-child(8){transform:rotate(157.5deg);}
+.petals span:nth-child(9){transform:rotate(180deg);}
+.petals span:nth-child(10){transform:rotate(202.5deg);}
+.petals span:nth-child(11){transform:rotate(225deg);}
+.petals span:nth-child(12){transform:rotate(247.5deg);}
+.petals span:nth-child(13){transform:rotate(270deg);}
+.petals span:nth-child(14){transform:rotate(292.5deg);}
+.petals span:nth-child(15){transform:rotate(315deg);}
+.petals span:nth-child(16){transform:rotate(337.5deg);}
+
+.center{
+    position:absolute;
+    width:90px;
+    height:90px;
+    top:45px;
+    left:45px;
+    border-radius:50%;
+    background:
+    radial-gradient(
+        circle,
+        #6d3d14,
+        #4a2a10,
+        #2d1607
+    );
+    z-index:10;
+    box-shadow:
+        inset 0 0 15px rgba(0,0,0,.5);
+}
+
+.not-loaded .sunflower{
+    transform:scale(0);
+}
